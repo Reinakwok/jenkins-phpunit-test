@@ -1,15 +1,15 @@
 pipeline {
 	agent any
-	
+
 	stages {
 		stage('Build') {
 			steps {
-				sh 'composer install'
+				bat 'composer install'
 			}
 		}
 		stage('Test') {
 			steps {
-                sh './vendor/bin/phpunit tests'
+                bat './vendor/bin/phpunit tests'
             }
 		}
 	}
