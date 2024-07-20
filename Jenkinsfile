@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat './vendor/bin/phpunit --log--junit logs/unitreport.xml -c tests/phpunit.xml tests'
+                bat './vendor/bin/phpunit --log-junit logs/unitreport.xml -c tests/phpunit.xml tests'
             }
         }
     }
