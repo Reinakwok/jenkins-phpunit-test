@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat 'vendor\\bin\\phpunit tests'
+                bat './vendor/bin/phpunit tests'
             }
         }
     }
