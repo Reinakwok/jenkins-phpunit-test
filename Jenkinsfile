@@ -1,15 +1,18 @@
 pipeline {
-    agent any
-    
+    agent{
+        docker {
+            image 'composer:latest'
+        }
+    }
     stages {
         stage('Build') {
             steps {
-                bat 'composer install'
+                sh 'composer install'
             }
         }
         stage('Test') {
             steps {
-                bat './vendor/bin/phpunit --log-junit logs/unitreport.xml -c tests/phpunit.xml tests'
+                sh './vendor/bin/phpunit --log-junit logs/unitreport.xml -c tests/phpunit.xml tests'
             }
         }
     }
